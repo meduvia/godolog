@@ -14,7 +14,7 @@ Database Log (Cassandra DB) => Soon (Q2 2022)
 
 ## Log format 
 
-**Product**-**Service**-**Location**-**Timestamp**-**FuncType**-**Type**-**Code**-**Message**
+**Product**-**Service**-**Location**-**Timestamp**-**FuncType**-**Level**-**Code**-**Message**
 
 **Product** must be an ID that refer to the product (a product have multiples services)
 
@@ -22,9 +22,9 @@ Database Log (Cassandra DB) => Soon (Q2 2022)
 
 **Location** must be where the error occured (like EU01, or could be more precise like EU01-DC1-R01-N01)
 
-**Timestamp** Is when the log was triggered
+**Timestamp** Is when the log was triggered (in milliseconds)
 
-**Type** `(verb,debug,info,warn,error,fatal)`
+**Level** `(verb,debug,info,warn,error,fatal)`
 
 **Code** Is an OPcode, for instance auth system = 03 so all the log that are from the auth system are code=03 
 
