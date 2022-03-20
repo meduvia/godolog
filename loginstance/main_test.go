@@ -9,7 +9,7 @@ import (
 )
 
 type ConsoleWriterBack struct {
-	logfunc func (string)
+	logfunc func(string)
 }
 
 func (console *ConsoleWriterBack) Debug(message string) {
@@ -27,7 +27,7 @@ func (console *ConsoleWriterBack) Error(message string) {
 
 func TestLogInstance(t *testing.T) {
 	var last_log string = "null"
-	 logfunc := func (message string) {
+	logfunc := func(message string) {
 		last_log = message
 	}
 	var logback writer.ConsoleWriterInterface = &ConsoleWriterBack{
@@ -43,36 +43,36 @@ func TestLogInstance(t *testing.T) {
 	code := "OP-R403"
 	message := "Rest API Error 403"
 	logmgr.Log(product, service, location, level, code, message)
-	if (last_log == "null") {
-		t.Fail() // Log was not sended
+	if last_log == "null" {
+		t.Error("Log was not sended")
 	}
 }
 
-
 func TestLogInstanceLevel(t *testing.T) {
 	var last_log string = "null"
-	logfunc := func (message string) {
+	logfunc := func(message string) {
 		last_log = message
- }
- var logback writer.ConsoleWriterInterface = &ConsoleWriterBack{
-	 logfunc: logfunc,
- }
- logwriter := writer.NewConsoleWriter(&logback)
- logmgr := loginstance.NewLogInstance(&logwriter, log.FlagDebug)
+	}
+	var logback writer.ConsoleWriterInterface = &ConsoleWriterBack{
+		logfunc: logfunc,
+	}
+	logwriter := writer.NewConsoleWriter(&logback)
+	logmgr := loginstance.NewLogInstance(&logwriter, log.FlagDebug)
 
- product := "App"
- service := "Service"
- location := "EU01-D01-R01-N01"
- code := "OP-R403"
- message := "Rest API Error 403"
- level_not_pass := log.FlagVerbose
- level_pass := log.FlagError
- logmgr.Log(product, service, location, level_not_pass, code, message)
- if (last_log != "null") {
-	 t.Fail() // log was sended but should be filtered
- }
- logmgr.Log(product, service, location, level_pass, code, message)
- if (last_log == "null") {
-	 t.Fail() // log should be displayed
- }
+	product := "App"
+	service := "Service"
+	location := "EU01-D01-R01-N01"
+	code := "OP-R403"
+	message := "Rest API Error 403"
+	level_not_pass := log.FlagVerbose
+	level_pass := log.FlagError
+	logmgr.Log(product, service, location, level_not_pass, code, message)
+	if last_log != "null" {
+
+		t.Error("Log was sended but should be filtered") // log was sended but should be filtered
+	}
+	logmgr.Log(product, service, location, level_pass, code, message)
+	if last_log == "null" {
+		t.Error("Log was not sended ") // log should be displayed
+	}
 }
