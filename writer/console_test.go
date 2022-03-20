@@ -41,7 +41,7 @@ func TestConsoleWriter(t *testing.T) {
 		consolewriter.Write(logobj)
 		val, err := logobj.ToJSONString()
 		if debug != val || err != nil {
-			t.Fail()
+			t.Error("Log was not written")
 		}
 	})
 
@@ -50,7 +50,7 @@ func TestConsoleWriter(t *testing.T) {
 		consolewriter.Write(logobj)
 		val, err := logobj.ToJSONString()
 		if debug != val || err != nil {
-			t.Fail()
+			t.Error("Log was not written")
 		}
 	})
 	t.Run("Test info write", func(t *testing.T) {
@@ -58,7 +58,7 @@ func TestConsoleWriter(t *testing.T) {
 		consolewriter.Write(logobj)
 		val, err := logobj.ToJSONString()
 		if info != val || err != nil {
-			t.Fail()
+			t.Error("Log was not written")
 		}
 	})
 	t.Run("Test warn write", func(t *testing.T) {
@@ -66,7 +66,7 @@ func TestConsoleWriter(t *testing.T) {
 		consolewriter.Write(logobj)
 		val, err := logobj.ToJSONString()
 		if warn != val || err != nil {
-			t.Fail()
+			t.Error("Log was not written")
 		}
 	})
 	t.Run("Test error write", func(t *testing.T) {
@@ -74,7 +74,7 @@ func TestConsoleWriter(t *testing.T) {
 		consolewriter.Write(logobj)
 		val, err := logobj.ToJSONString()
 		if errorval != val || err != nil {
-			t.Fail()
+			t.Error("Log was not written")
 		}
 	})
 	t.Run("Test fatal write", func(t *testing.T) {
@@ -82,7 +82,7 @@ func TestConsoleWriter(t *testing.T) {
 		consolewriter.Write(logobj)
 		val, err := logobj.ToJSONString()
 		if errorval != val || err != nil {
-			t.Fail()
+			t.Error("Log was not written")
 		}
 	})
 	t.Run("Test default write", func(t *testing.T) {
@@ -90,7 +90,7 @@ func TestConsoleWriter(t *testing.T) {
 		consolewriter.Write(logobj)
 		val, err := logobj.ToJSONString()
 		if debug != val || err != nil {
-			t.Fail()
+			t.Error("Log was not written")
 		}
 	})
 
