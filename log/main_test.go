@@ -98,13 +98,14 @@ func TestFlagCompareOneMoreThanTwo(t *testing.T) {
 		// upper or eq flag => log should be displayed
 		for _, flag := range tocompare_up {
 			if log.FlagCompareOneMoreThanTwo(one, flag) != false {
-				t.Fail()
+				t.Errorf("%s was found more than %s", one, flag)
 			}
 		}
 		// down => log should be discarded
 		for _, flag := range tocompare_down {
 			if log.FlagCompareOneMoreThanTwo(one, flag) != true {
-				t.Fail()
+				/// atm useless but can be used in the futur
+				t.Errorf("%s was found less or eq than %s", one, flag)
 			}
 		}
 	})
@@ -115,13 +116,13 @@ func TestFlagCompareOneMoreThanTwo(t *testing.T) {
 		// upper or eq flag => log should be displayed
 		for _, flag := range tocompare_up {
 			if log.FlagCompareOneMoreThanTwo(one, flag) != false {
-				t.Fail()
+				t.Errorf("%s was found more than %s", one, flag)
 			}
 		}
 		// down => log should be discarded
 		for _, flag := range tocompare_down {
 			if log.FlagCompareOneMoreThanTwo(one, flag) != true {
-				t.Fail()
+				t.Errorf("%s was found less or eq than %s", one, flag)
 			}
 		}
 	})
@@ -132,13 +133,13 @@ func TestFlagCompareOneMoreThanTwo(t *testing.T) {
 		// upper or eq flag => log should be displayed
 		for _, flag := range tocompare_up {
 			if log.FlagCompareOneMoreThanTwo(one, flag) != false {
-				t.Fail()
+				t.Errorf("%s was found more than %s", one, flag)
 			}
 		}
 		// down => log should be discarded
 		for _, flag := range tocompare_down {
 			if log.FlagCompareOneMoreThanTwo(one, flag) != true {
-				t.Fail()
+				t.Errorf("%s was found less or eq than %s", one, flag)
 			}
 		}
 	})
@@ -149,13 +150,13 @@ func TestFlagCompareOneMoreThanTwo(t *testing.T) {
 		// upper or eq flag => log should be displayed
 		for _, flag := range tocompare_up {
 			if log.FlagCompareOneMoreThanTwo(one, flag) != false {
-				t.Fail()
+				t.Errorf("%s was found more than %s", one, flag)
 			}
 		}
 		// down => log should be discarded
 		for _, flag := range tocompare_down {
 			if log.FlagCompareOneMoreThanTwo(one, flag) != true {
-				t.Fail()
+				t.Errorf("%s was found less or eq than %s", one, flag)
 			}
 		}
 	})
@@ -166,13 +167,13 @@ func TestFlagCompareOneMoreThanTwo(t *testing.T) {
 		// upper or eq flag => log should be displayed
 		for _, flag := range tocompare_up {
 			if log.FlagCompareOneMoreThanTwo(one, flag) != false {
-				t.Fail()
+				t.Errorf("%s was found more than %s", one, flag)
 			}
 		}
 		// down => log should be discarded
 		for _, flag := range tocompare_down {
 			if log.FlagCompareOneMoreThanTwo(one, flag) != true {
-				t.Fail()
+				t.Errorf("%s was found less or eq than %s", one, flag)
 			}
 		}
 	})
@@ -183,13 +184,13 @@ func TestFlagCompareOneMoreThanTwo(t *testing.T) {
 		// upper or eq flag => log should be displayed
 		for _, flag := range tocompare_up {
 			if log.FlagCompareOneMoreThanTwo(one, flag) != false {
-				t.Fail()
+				t.Errorf("%s was found more than %s", one, flag)
 			}
 		}
 		// down => log should be discarded
 		for _, flag := range tocompare_down {
 			if log.FlagCompareOneMoreThanTwo(one, flag) != true {
-				t.Fail()
+				t.Errorf("%s was found less or eq than %s", one, flag)
 			}
 		}
 	})
@@ -200,13 +201,13 @@ func TestFlagCompareOneMoreThanTwo(t *testing.T) {
 		// upper or eq flag => log should be displayed
 		for _, flag := range tocompare_up {
 			if log.FlagCompareOneMoreThanTwo(one, flag) != false {
-				t.Fail()
+				t.Errorf("%s was found more than %s", one, flag)
 			}
 		}
 		// down => log should be discarded
 		for _, flag := range tocompare_down {
 			if log.FlagCompareOneMoreThanTwo(one, flag) != true {
-				t.Fail()
+				t.Errorf("%s was found less or eq than %s", one, flag)
 			}
 		}
 	})
@@ -217,13 +218,13 @@ func TestFlagCompareOneMoreThanTwo(t *testing.T) {
 		// upper or eq flag => log should be displayed
 		for _, flag := range tocompare_up {
 			if log.FlagCompareOneMoreThanTwo(one, flag) != false {
-				t.Fail()
+				t.Errorf("%s was found more eq than %s", one, flag)
 			}
 		}
 		// down => log should be discarded
 		for _, flag := range tocompare_down {
 			if log.FlagCompareOneMoreThanTwo(one, flag) != true {
-				t.Fail()
+				t.Errorf("%s was found less or eq than %s", one, flag)
 			}
 		}
 	})
