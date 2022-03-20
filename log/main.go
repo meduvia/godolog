@@ -60,15 +60,15 @@ func FlagCompareOneMoreThanTwo(one FlagLevel, two FlagLevel) bool {
 	case FlagVerbose:
 		return false
 	case FlagDebug:
-		return (two != FlagVerbose)
+		return !(two != FlagVerbose)
 	case FlagInfo:
-		return (two != FlagVerbose && two != FlagDebug)
+		return !(two != FlagVerbose && two != FlagDebug)
 	case FlagWarn:
-		return (two != FlagVerbose && two != FlagDebug && two != FlagInfo)
+		return !(two != FlagVerbose && two != FlagDebug && two != FlagInfo)
 	case FlagError:
-		return (two != FlagVerbose && two != FlagDebug && two != FlagInfo && two != FlagWarn)
+		return !(two != FlagVerbose && two != FlagDebug && two != FlagInfo && two != FlagWarn)
 	case FlagFatal:
-		return (two != FlagVerbose && two != FlagDebug && two != FlagInfo && two != FlagWarn && two != FlagError)
+		return !(two != FlagVerbose && two != FlagDebug && two != FlagInfo && two != FlagWarn && two != FlagError)
 	case FlagNone:
 		return true
 	default:

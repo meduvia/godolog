@@ -2,6 +2,10 @@ package writer
 
 import "github.com/meduvia/godolog/log"
 
+const (
+	ErrorJSONString = "Error Writing log"
+)
+
 type ConsoleWriterInterface interface {
 	// we did not add verbose because in major logger backend verbose does not exist
 	Debug(string) // verbose + debug
@@ -15,16 +19,17 @@ type ConsoleWriter struct {
 	writer *ConsoleWriterInterface
 }
 
-func NewConsoleWriter(LogBackend *ConsoleWriterInterface) *ConsoleWriter {
+func NewConsoleWriter(LogBackend *ConsoleWriterInterface) WriterInstance {
 	return &ConsoleWriter{
 		writer: LogBackend,
 	}
 } 
 
-func (consolewriter *ConsoleWriter) Write(logobj *log.Log) {
+func (consolewriter *ConsoleWriter) Write(logobj *log.Log) error {
 	logstring, err := logobj.ToJSONString()
 	if err != nil {
-		(*consolewriter.writer).Error("Error Writing log")
+		// This can't normally happen, but in case ... 
+		(*consolewriter.writer).Error(ErrorJSONString)
 	}
 	switch logobj.Level {
 	case log.FlagVerbose, log.FlagDebug:
@@ -38,5 +43,5 @@ func (consolewriter *ConsoleWriter) Write(logobj *log.Log) {
 	default:
 		(*consolewriter.writer).Debug(logstring)
 	}
-
+	return nil
 }

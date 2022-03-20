@@ -1,4 +1,4 @@
-package log
+package loginstance
 
 import (
 	"github.com/meduvia/godolog/log"
@@ -10,9 +10,9 @@ type LogInstance struct {
 	level log.FlagLevel
 }
 
-func NewLogInstance(logbackend *writer.WriterInstance, level log.FlagLevel) *LogInstance{
+func NewLogInstance(logwriter *writer.WriterInstance, level log.FlagLevel) *LogInstance{
 	return &LogInstance{
-		writer: logbackend,
+		writer: logwriter,
 		level: level,
 	}
 }
