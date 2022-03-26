@@ -1,4 +1,5 @@
-# godolog
+# godolog 
+[![CodeFactor](https://www.codefactor.io/repository/github/meduvia/godolog/badge/main)](https://www.codefactor.io/repository/github/meduvia/godolog/overview/main)
 Golang Log module that support file logging, database logging and terminal logging
 
 
